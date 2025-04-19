@@ -36,12 +36,12 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker Image
-          command: docker build -t yourdockerhub/karsajobs:latest .
+          command: docker build -t rehanmaul1/karsajobs:latest .
       - run:
           name: Push to DockerHub
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            docker push yourdockerhub/karsajobs:latest
+            docker push rehanmaul1/karsajobs:latest
 
   build-app-karsajobs-ui:
     executor: docker-executor
@@ -50,12 +50,12 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker Image
-          command: docker build -t yourdockerhub/karsajobs-ui:latest .
+          command: docker build -t rehanmaul1/karsajobs-ui:latest .
       - run:
           name: Push to DockerHub
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            docker push yourdockerhub/karsajobs-ui:latest
+            docker push rehanmaul1/karsajobs-ui:latest
 
 workflows:
   version: 2
